@@ -20,7 +20,7 @@ We will ignore the **Audio Mixer** for now (that's a mxing topic for another day
 
 To play a sound, you drag an Audio Clip to an Audio Source's **Audio Clip** field. At taht point, you can think of an Audio Source as a "bus" on a mixing console - it can apply effects and finally output the clip.<br>
 
-![AudioSource](Audio%20System%20Pic/Unity%20Audio%20Source.png)<br>
+![AudioSource](Audio System Pic/Unity%20Audio%20Source.png)<br>
 For a smaller scale Unity project, this simple setup works perfecty:<br>
 
 *Attach an AudioSource → Reference it in a script → Call*
@@ -190,4 +190,5 @@ https://github.com/JianghaoL/Unity_BuiltIn_Audio_System
 Maybe I'll dive into FMOD / Wwise system architecture as well.
 
 Stay tuned!
+
 
