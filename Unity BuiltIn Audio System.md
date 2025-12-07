@@ -173,7 +173,7 @@ Super clean, isn't it?
 
 >Note that the generated class inherits from `AudioID`
 
-Because of this inheritance, you can also use **reflection** to gather them automatically - this can be useful if, say, you want to load `AudioConfigSO` files based on level number, for example.
+Because of this inheritance, you can also use **reflection** to gather them automatically - this can be useful if, say, you want to load `AudioConfigSO` files based on level number.
 
 ## Wrapping Up
 
@@ -190,6 +190,7 @@ https://github.com/JianghaoL/Unity_BuiltIn_Audio_System
 Maybe I'll dive into FMOD / Wwise system architecture as well.
 
 Stay tuned!
+
 
 
 
