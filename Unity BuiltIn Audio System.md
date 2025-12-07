@@ -20,7 +20,7 @@ We will ignore the **Audio Mixer** for now (that's a mxing topic for another day
 
 To play a sound, you drag an Audio Clip to an Audio Source's **Audio Clip** field. At taht point, you can think of an Audio Source as a "bus" on a mixing console - it can apply effects and finally output the clip.<br>
 
-![AudioSource](/Audio%20System%20Pic/Unity%20Audio%20Source.png)<br>
+![AudioSource](Audio%20System%20Pic/Unity%20Audio%20Source.png)<br>
 For a smaller scale Unity project, this simple setup works perfecty:<br>
 
 *Attach an AudioSource → Reference it in a script → Call*
@@ -69,15 +69,15 @@ public class AudioConfig
     public AudioClip clip;
 }
 ```
-![AudioConfigSO](/Audio%20System%20Pic/AudioConfigSO.png)
+![AudioConfigSO](Audio%20System%20Pic/AudioConfigSO.png)
 
 `GetClip()` finds an Audio Clip by its custom name, which you set up in Unity Editor.
 
-![GetClip()](/Audio%20System%20Pic/GetClip%20Method.png)
+![GetClip()](Audio%20System%20Pic/GetClip%20Method.png)
 
 In Unity, the ScriptableObject looks like this:
 
-![AudioConfigsSOinUnity](/Audio%20System%20Pic/AudioConfig%20Inspector.png)
+![AudioConfigsSOinUnity](Audio%20System%20Pic/AudioConfig%20Inspector.png)
 
 <br>
 
@@ -85,7 +85,7 @@ In Unity, the ScriptableObject looks like this:
 
 We then build the `AudioManager`, which is implemented as a **singleton**.
 
-![AudioManager](/Audio%20System%20Pic/AudioManager.png)
+![AudioManager](Audio%20System%20Pic/AudioManager.png)
 
 It holds a reference to `AudioConfigSO`, allowing it to fetch clip data.
 
@@ -94,7 +94,7 @@ We can add methods like:
 - `Stop`
 - `SetVolume`, etc.
 
-![AudioManagerMethods](/Audio%20System%20Pic/Play%20and%20Stop%20Methods.png)
+![AudioManagerMethods](Audio%20System%20Pic/Play%20and%20Stop%20Methods.png)
 
 >Note that each method receives an Audio Source as a **parameter** 
 
@@ -108,7 +108,7 @@ At this point, we've achieved the core architecture:
 
 Example usage becomes pleasant to look at:
 
-![FunctionalScriptWithString](/Audio%20System%20Pic/Functional%20Script%20with%20string.png)
+![FunctionalScriptWithString](Audio%20System%20Pic/Functional%20Script%20with%20string.png)
 
 ## But, Can We Take it Even Further?
 
@@ -147,17 +147,17 @@ public static class GenerateAudioID
 The `Generate()` method will scan:
 `Resourcs/Audio Configs`
 
-![GenerateMethod](/Audio%20System%20Pic/Generate%20Method.png)
+![GenerateMethod](Audio%20System%20Pic/Generate%20Method.png)
 
 It loops through all assets, and for each `AudioConfigSO`, it calls `CreateClass()`, which creates a new class containing all of its keys.
 
-![CreateClass](/Audio%20System%20Pic/CreateClass%20method.png)
+![CreateClass](Audio%20System%20Pic/CreateClass%20method.png)
 
 Now, you can do<br>
 **Tools → GenerateAudioID**<br>
 to generate class(es) for each of your `AudioConfigSO`.
 
-![CreatedAudioID](/Audio%20System%20Pic/AudioID%20example.png)
+![CreatedAudioID](Audio%20System%20Pic/AudioID%20example.png)
 
 With this, we can further update our gameplay scripts by simply writing:
 
@@ -167,7 +167,7 @@ audioManager.Play(Level_1_Audio_ID.Door_Close, audioSource);
 
 Or as shown in the picture below:
 
-![FunctionalScriptWithClassRef](/Audio%20System%20Pic/Functional%20Script%20with%20Class%20ref.png)
+![FunctionalScriptWithClassRef](Audio%20System%20Pic/Functional%20Script%20with%20Class%20ref.png)
 
 Super clean, isn't it?
 
@@ -190,3 +190,4 @@ https://github.com/JianghaoL/Unity_BuiltIn_Audio_System
 Maybe I'll dive into FMOD / Wwise system architecture as well.
 
 Stay tuned!
+
